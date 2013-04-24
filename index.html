@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Circle Time</title>
+
+		<link rel="stylesheet" href="styles/info.css">
+		<link rel="stylesheet" href="styles/main.css">
+	</head>
+	<body>
+		<div id="container">
+			<div id="content">
+				<h1>STOP.</h1><br>
+				<h3>Circle time.</h3>
+
+			</div>
+		</div>
+		<script src="scripts/libs/underscore.js"></script>
+		<script src="scripts/libs/Markdown.Converter.js"></script>
+		<script src="scripts/libs/info.js"></script>
+		<script src="scripts/libs/sketch.js"></script>
+		<script src="scripts/libs/dat.gui.min.js"></script>
+		<script src="scripts/main.js"></script>
+		<script>
+
+			//// Setup Info Section
+			new Info({
+				url: "README.md",
+				keyTrigger: true
+			});
+
+		</script>
+	</body>
+</html>
