@@ -13,5 +13,8 @@ Yay, so fun!
 
 Okay, time to go to bed.
 
-
 Created with [Sketch.js](http://soulwire.github.io/sketch.js/) with help from [dat.GUI](https://code.google.com/p/dat-gui/).
+
+Check out the source: [https://github.com/rolyatmax/CircleTime](https://github.com/rolyatmax/CircleTime).
+
+See it in action: [http://tbaldw.in/circletime](http://tbaldw.in/circletime).
