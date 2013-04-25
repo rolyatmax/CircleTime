@@ -2,11 +2,11 @@
 
 	///// Defaults
 	var defaults = {
-		startingSize: 60,
-		speed: 5,
+		startingSize: 100,
+		speed: 3,
 		spawnerLimit: 5,
-		production: 200,
-		shrink: 0.97
+		production: 100,
+		shrink: 0.99
 	};
 
 	var COLORS = ['#69D2E7', '#BEFAF6', '#9D91EB', '#B6D4CD', '#435B9C'];
@@ -38,17 +38,23 @@
 				return;
 			}
 
+			this.checkParticleCount();
+
+			// have all the particles draw themselves
+			var len = this.particles.length;
+			while (len--) {
+				this.particles[len].draw();
+			}
+		},
+
+		checkParticleCount: function() {
+
 			var total = this.particles.length;
 			var target = this.ctx.production;
 
 			var i = target - total;
 			while (i >= 0 && i--) {
 				this.spawn();
-			}
-
-			var len = this.particles.length;
-			while (len--) {
-				this.particles[len].draw();
 			}
 		},
 
@@ -196,7 +202,6 @@
 			var limit = this.spawnerLimit;
 
 			if (total > limit) {
-			
 				var i = total - limit;
 				while (i >= 0 && i--) {
 					this.killSpawner();
@@ -224,11 +229,11 @@
 	////// Setup dat.GUI
 
 	var gui = new dat.GUI();
-	gui.add(ctx, 'production', 1, 350).step(1);
-	gui.add(ctx, 'spawnerLimit', 1, 20).step(1);
-	gui.add(ctx, 'speed', 1, 50);
+	gui.add(ctx, 'production', 1, 250).step(1);
+	gui.add(ctx, 'spawnerLimit', 1, 15).step(1);
+	gui.add(ctx, 'speed', 1, 25);
 	gui.add(ctx, 'startingSize', 1, 200);
-	gui.add(ctx, 'shrink', 0.10, 0.99);
+	gui.add(ctx, 'shrink', 0.85, 0.99);
 	gui.add(ctx, 'clearSpawners');
 
 	// Exports
